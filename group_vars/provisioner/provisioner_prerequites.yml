@@ -20,10 +20,10 @@ rhah_refresh_token_cmd: "{{ automation_hub_refresh_token_cmd_vault }}"
 git_configs:
   - name: "user.name"
     scope: "global"
-    value: "parmstro"
+    value: "shawkingly"
   - name: "user.email"
     scope: "global"
-    value: "parmstro@redhat.com"
+    value: "cshaw@redhat.com"
 
 # Use this value to provide a default domain name
 # for network variables that use the domain
@@ -36,27 +36,27 @@ default_network: "192.168.140"
 # We use these values to update the local /etc/hosts file on the provisioner, idm and satellite
 # bootstrap systems so that we have basic name resolution for the bootstrap process
 environment_hosts:
-  - name: "provisioner.{{ default_domain }}"
-    ip: "{{ default_network }}.13"
-  - name: "idm1.{{ default_domain }}"
-    ip: "{{ default_network }}.5"
-  - name: "satellite1.{{ default_domain }}"
-    ip: "{{ default_network }}.12"
+  - name: "rhis-provisioner.{{ default_domain }}"
+    ip: "192.168.64.6"
+  - name: "idm.{{ default_domain }}"
+    ip: "{{ default_network }}.10"
+  - name: "satellite.{{ default_domain }}"
+    ip: "{{ default_network }}.11"
 
   # You can extend this e.g. if you want to add your VMware environment
   # Development environment subnet
-  - name: "vcenter.{{ default_domain }}"
-    ip: "{{ default_network }}.30"
-  - name: "esx2.{{ default_domain }}"
-    ip: "{{ default_network }}.32"
-  - name: "esx3.{{ default_domain }}"
-    ip: "{{ default_network }}.33"
-  - name: "esx4.{{ default_domain }}"
-    ip: "{{ default_network }}.34"
-  - name: "esx5.{{ default_domain }}"
-    ip: "{{ default_network }}.35"
-  - name: "esx6.{{ default_domain }}"
-    ip: "{{ default_network }}.36"
+  # - name: "vcenter.{{ default_domain }}"
+  #   ip: "{{ default_network }}.30"
+  # - name: "esx2.{{ default_domain }}"
+  #   ip: "{{ default_network }}.32"
+  # - name: "esx3.{{ default_domain }}"
+  #   ip: "{{ default_network }}.33"
+  # - name: "esx4.{{ default_domain }}"
+  #   ip: "{{ default_network }}.34"
+  # - name: "esx5.{{ default_domain }}"
+  #   ip: "{{ default_network }}.35"
+  # - name: "esx6.{{ default_domain }}"
+  #   ip: "{{ default_network }}.36"
 
 rhis_repo_path: "~/rhis/"
 my_git_username: "{{ git_configs[0].value }}"
